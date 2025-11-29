@@ -37,7 +37,20 @@
             transform: translate(-50%, -50%); /* 中心を座標に合わせる */
             animation: pulse 2s infinite; /* プルプル動くアニメーション */
         }
+        
+        .pin.link-type {
+            background-color: #007bff; /* 鮮やかな青色 */
+            /* もしアニメーションの色も変えたい場合は以下も追加 */
+            /* animation: pulse-blue 2s infinite; */
+        }
 
+        /* (オプション) 青色用のアニメーション定義 */
+        
+        @keyframes pulse-blue {
+            0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
+            70% { transform: translate(-50%, -50%) scale(1.2); box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); }
+            100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
+        }
         /* ピンのアニメーション */
         @keyframes pulse {
             0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
