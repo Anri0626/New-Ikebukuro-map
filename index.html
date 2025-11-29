@@ -123,7 +123,14 @@
             pin.addEventListener('click', () => {
                 const type = pin.getAttribute('data-type');
                 const src = pin.getAttribute('data-src');
-                
+
+                // ★ここから追加機能★
+                // タイプが「link」なら、新しいタブでサイトを開く
+                if (type === 'link') {
+                    window.open(src, '_blank'); 
+                    return; // ここで処理終了（動画画面は出さない）
+                }
+                // ★ここまで追加機能★
                 let htmlContent = '';
 
                 if (type === 'youtube') {
@@ -153,6 +160,7 @@
 
 </body>
 </html>
+
 
 
 
